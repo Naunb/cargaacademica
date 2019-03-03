@@ -1,0 +1,11 @@
+﻿@model List<cargaacademicaInformatica.Web.Models.Asignaturas>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Asignaturas</h2>
+
+@foreach (var asignaturas in Model)
+{
+    <p>@asignaturas.Id @asignaturas.Descripcion</p>
+}
