@@ -1,11 +1,41 @@
-﻿@model List<cargaacademicaInformatica.Web.Models.Asignaturas>
+﻿@model List <cargaacademicaInformatica.BL.Asignatura>
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Asignaturas</h2>
 
-@foreach (var asignaturas in Model)
+       
+<table class="table table-bordered table-hover">
+    <thead>
+    <tr>
+    <th>
+        Nombre Asignatura
+    </th>
+        <th>
+            Nombre Catedratico
+        </th>
+        <th>
+            Seccion
+        </th>
+        <th>
+            Edificio
+        </th>
+    </tr>
+    </thead>
+
+
+
+
+@foreach (var asignatura in Model)
 {
-    <p>@asignaturas.Id @asignaturas.Descripcion</p>
-}
+
+    <tr>
+        <td>@asignatura.NombreAsignatura</td>
+        <td>@asignatura.NombreCatedratico</td>
+        <td>@asignatura.Seccion</td>
+        <td>@asignatura.Edificio</td>
+    </tr>
+    }
+
+</table>
