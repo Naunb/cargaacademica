@@ -16,18 +16,10 @@ namespace cargaacademicaInformatica.Win
         public Form1()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
             var asignaturasBL = new AsiganturasBL();
-            ListaAsignaturas = AsiganturasBL.ObtenerProductos();
-
-            
-                foreach (var asignaturas in ListaAsignaturas);
-            {
-                MessageBox.Show(Asignaturas);
-            }
+            var ListaAsignaturas = AsiganturasBL.ObtenerAsignatura();
+        
+       
         }
     }
 }

@@ -8,9 +8,20 @@ namespace cargaacademicaInformatica.BL
 {
     public class AsiganturasBL
     {
+        Contexto _contexto;
+        public List<Asignatura> ListadeAsignaturas { get; set; }
 
+        public AsiganturasBL()
+        {
+            _contexto = new Contexto();
+            ListadeAsignaturas = new List<Asignatura>();
+        }
+            
+            
         public List<Asignatura> ObtenerAsignaturas()
         {
+           ListadeAsignaturas= _contexto.Asignaturas.ToList();
+
             var Asignatura1 = new Asignatura();
             Asignatura1.Seccion = "1600";
             Asignatura1.Edificio = "5";
@@ -39,10 +50,14 @@ namespace cargaacademicaInformatica.BL
             ListaAsignaturas.Add(Asignatura3);
 
 
-            return ListaAsignaturas;
-            
+            return _contexto.Asignaturas.ToList();
 
-            }
-            
+
+        }
+
+        public static object ObtenerAsignatura()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
